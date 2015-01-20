@@ -3,7 +3,7 @@ MAINTAINER Borja Burgos <borja@tutum.co>, Feng Honglin <hfeng@tutum.co>
 
 # Install packages
 RUN apt-get update && \
-  apt-get -yq install mysql-client && \
+  apt-get -yq install mysql-client git && \
   rm -rf /var/lib/apt/lists/*
 
 # Add permalink feature
@@ -21,6 +21,10 @@ RUN chmod 755 /*.sh
 
 # Modify permissions to allow plugin upload
 RUN chmod -R 777 /app/wp-content
+
+# Clone and link OneMozilla theme
+RUN git clone https://github.com/Mozilla-cIT/One-Mozilla-blog /app/wp-content/One-Mozilla-blog
+RUN ln -sf /app/OneMozilla /app/wp-content/One-Mozilla-blog/themes/OneMozilla
 
 # Expose environment variables
 ENV DB_HOST **LinkMe**
