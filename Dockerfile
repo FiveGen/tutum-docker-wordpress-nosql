@@ -3,7 +3,7 @@ MAINTAINER Borja Burgos <borja@tutum.co>, Feng Honglin <hfeng@tutum.co>
 
 # Install packages
 RUN apt-get update && \
-  apt-get -yq install mysql-client git && \
+  apt-get -yq install mysql-client git wget unzip && \
   rm -rf /var/lib/apt/lists/*
 
 # Add permalink feature
@@ -25,6 +25,30 @@ RUN chmod -R 777 /app/wp-content
 # Clone and link OneMozilla theme
 RUN git clone https://github.com/Mozilla-cIT/One-Mozilla-blog /app/wp-content/One-Mozilla-blog
 RUN ln -sf /app/OneMozilla /app/wp-content/One-Mozilla-blog/themes/OneMozilla
+
+# Install all the plugins
+WORKDIR /app/wp-content/plugins
+
+# Google Authenticator (https://wordpress.org/plugins/google-authenticator/)
+RUN wget https://downloads.wordpress.org/plugin/google-authenticator.0.47.zip && unzip google-authenticator.0.47.zip
+
+# Jetpack (https://wordpress.org/plugins/jetpack/)
+RUN wget https://downloads.wordpress.org/plugin/jetpack.3.3.zip && unzip jetpack.3.3.zip
+
+# WordPress Importer (https://downloads.wordpress.org/plugin/wordpress-importer.0.6.1.zip)
+RUN wget https://downloads.wordpress.org/plugin/wordpress-importer.0.6.1.zip && unzip wordpress-importer.0.6.1.zip
+
+# Amazon Web Services (https://wordpress.org/plugins/amazon-web-services/)
+RUN wget https://downloads.wordpress.org/plugin/amazon-web-services.0.2.2.zip && unzip amazon-web-services.0.2.2.zip
+
+# Amazon S3 and Cloudfront (https://wordpress.org/plugins/amazon-s3-and-cloudfront/)
+RUN wget https://downloads.wordpress.org/plugin/amazon-s3-and-cloudfront.0.8.1.zip && unzip amazon-s3-and-cloudfront.0.8.1.zip
+
+# Amazon SES DKIM Mailer (https://wordpress.org/plugins/amazon-ses-and-dkim-mailer/)
+RUN wget https://downloads.wordpress.org/plugin/amazon-ses-and-dkim-mailer.1.7.zip && unzip amazon-ses-and-dkim-mailer.1.7.zip
+
+# Wordfence Security (https://wordpress.org/plugins/wordfence/)
+RUN wget https://downloads.wordpress.org/plugin/wordfence.5.3.5.zip && unzip wordfence.5.3.5.zip
 
 # Expose environment variables
 ENV DB_HOST **LinkMe**
