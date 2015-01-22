@@ -50,6 +50,9 @@ RUN wget https://downloads.wordpress.org/plugin/amazon-ses-and-dkim-mailer.1.7.z
 # Wordfence Security (https://wordpress.org/plugins/wordfence/)
 RUN wget https://downloads.wordpress.org/plugin/wordfence.5.3.5.zip && unzip wordfence.5.3.5.zip
 
+# User Role Editor (https://wordpress.org/plugins/user-role-editor/)
+RUN wget https://downloads.wordpress.org/plugin/user-role-editor.4.18.1.zip && unzip user-role-editor.4.18.1.zip
+
 # Expose environment variables
 ENV DB_HOST **LinkMe**
 ENV DB_PORT **LinkMe**
