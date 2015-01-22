@@ -59,6 +59,8 @@ ENV DB_PORT **LinkMe**
 ENV DB_NAME wordpress
 ENV DB_USER admin
 ENV DB_PASS **ChangeMe**
+ENV AWS_ACCESS_KEY_ID **ChangeMe**
+ENV AWS_SECRET_ACCESS_KEY **ChangeMe**
 
 EXPOSE 80
 VOLUME ["/app/wp-content"]
