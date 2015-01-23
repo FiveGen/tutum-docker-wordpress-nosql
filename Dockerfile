@@ -6,6 +6,11 @@ RUN apt-get update && \
   apt-get -yq install mysql-client git wget unzip && \
   rm -rf /var/lib/apt/lists/*
 
+# Install WP-CLI (http://wp-cli.org/)
+RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+RUN chmod +x wp-cli.phar
+RUN mv wp-cli.phar /usr/local/bin/wp
+
 # Add permalink feature
 RUN a2enmod rewrite
 ADD wordpress.conf /etc/apache2/sites-enabled/000-default.conf
@@ -28,6 +33,8 @@ RUN ln -sf /app/wp-content/One-Mozilla-blog/themes/OneMozilla /app/wp-content/th
 
 # Install all the plugins
 WORKDIR /app/wp-content/plugins
+
+### Begin plugin installation ###
 
 # Google Authenticator (https://wordpress.org/plugins/google-authenticator/)
 RUN wget https://downloads.wordpress.org/plugin/google-authenticator.0.47.zip && unzip google-authenticator.0.47.zip
@@ -55,6 +62,12 @@ RUN wget https://downloads.wordpress.org/plugin/user-role-editor.4.18.1.zip && u
 
 # MainWP Child (https://wordpress.org/plugins/mainwp-child/)
 RUN wget https://downloads.wordpress.org/plugin/mainwp-child.2.0.6.zip && unzip mainwp-child.2.0.6.zip
+
+### End plugin installation ###
+
+# Activate all plugins
+WORKDIR /app
+RUN wp plugin activate --all
 
 # Expose environment variables
 ENV DB_HOST **LinkMe**
