@@ -65,10 +65,6 @@ RUN wget https://downloads.wordpress.org/plugin/mainwp-child.2.0.6.zip && unzip 
 
 ### End plugin installation ###
 
-# Activate all plugins
-WORKDIR /app
-RUN wp plugin activate --all --allow-root
-
 # Expose environment variables
 ENV DB_HOST **LinkMe**
 ENV DB_PORT **LinkMe**
@@ -81,3 +77,7 @@ ENV AWS_SECRET_ACCESS_KEY **ChangeMe**
 EXPOSE 80
 VOLUME ["/app/wp-content"]
 CMD ["/run-wordpress.sh"]
+
+# Activate all plugins
+WORKDIR /app
+RUN wp plugin activate --all --allow-root
