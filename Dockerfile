@@ -67,7 +67,7 @@ RUN wget https://downloads.wordpress.org/plugin/mainwp-child.2.0.6.zip && unzip 
 
 # Activate all plugins
 WORKDIR /app
-RUN wp plugin activate --all
+RUN wp plugin activate --all --allow-root
 
 # Expose environment variables
 ENV DB_HOST **LinkMe**
