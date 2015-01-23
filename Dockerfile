@@ -53,6 +53,9 @@ RUN wget https://downloads.wordpress.org/plugin/wordfence.5.3.5.zip && unzip wor
 # User Role Editor (https://wordpress.org/plugins/user-role-editor/)
 RUN wget https://downloads.wordpress.org/plugin/user-role-editor.4.18.1.zip && unzip user-role-editor.4.18.1.zip
 
+# MainWP Child (https://wordpress.org/plugins/mainwp-child/)
+RUN wget https://downloads.wordpress.org/plugin/mainwp-child.2.0.6.zip && unzip mainwp-child.2.0.6.zip
+
 # Expose environment variables
 ENV DB_HOST **LinkMe**
 ENV DB_PORT **LinkMe**
