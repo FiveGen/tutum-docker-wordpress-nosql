@@ -10,8 +10,7 @@ wordpress:
     DB_PASS: "**ChangeMe**"
     DB_HOST: "**LinkMe**"
     DB_PORT: "**LinkMe**"
-    AWS_ACCESS_KEY_ID: "**ChangeMe**"
-    AWS_SECRET_ACCESS_KEY: "**ChangeMe**"
+
 db:
   image: tutum/mysql:5.5
   environment:

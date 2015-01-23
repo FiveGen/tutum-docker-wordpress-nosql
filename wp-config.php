@@ -80,10 +80,6 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
-/* AWS credentials for AWS plugins */
-define('AWS_ACCESS_KEY_ID', getenv('AWS_ACCESS_KEY_ID'));
-define('AWS_SECRET_ACCESS_KEY', getenv('AWS_SECRET_ACCESS_KEY'));
-
 /* Set the default theme to OneMozilla */
 define('WP_DEFAULT_THEME', 'OneMozilla');
 
