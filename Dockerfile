@@ -80,4 +80,4 @@ CMD ["/run-wordpress.sh"]
 
 # Activate all plugins
 WORKDIR /app
-RUN wp plugin activate --all --allow-root
+CMD ["wp", "plugin", "activate", "--all", "--allow-root"]
