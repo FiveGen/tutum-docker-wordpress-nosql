@@ -84,4 +84,4 @@ CMD ["/run-wordpress.sh"]
 
 # Install WordPress and activate all plugins
 WORKDIR /app
-CMD ["sh", "-c", "sudo", "-u", "www-data", "wp", "--allow-root", "core", "install", "--title=$WP_TITLE", "--admin_user=$WP_ADMIN_USER", "--admin_password=$WP_ADMIN_PASSWORD", "--admin_email=$WP_ADMIN_EMAIL", "&&", "sudo", "-u", "www-data", "wp", "--allow-root", "plugin", "activate", "--all"]
+CMD ["sh", "-c", "sudo", "-u", "www-data", "\"", "wp", "--allow-root", "core", "install", "--title=$WP_TITLE", "--admin_user=$WP_ADMIN_USER", "--admin_password=$WP_ADMIN_PASSWORD", "--admin_email=$WP_ADMIN_EMAIL", "\"", "&&", "sudo", "-u", "www-data", "\"", "wp", "--allow-root", "plugin", "activate", "--all", "\""]
