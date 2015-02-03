@@ -81,7 +81,3 @@ ENV WP_ADMIN_EMAIL **ChangeMe**
 EXPOSE 80
 VOLUME ["/app/wp-content"]
 CMD ["/run-wordpress.sh"]
-
-# Install WordPress and activate all plugins
-WORKDIR /app
-CMD sudo -u www-data -s wp core install --title=$WP_TITLE --admin_user=$WP_ADMIN_USER --admin_password=$WP_ADMIN_PASSWORD --admin_email=$WP_ADMIN_EMAIL && sudo -u www-data -s wp --allow-root plugin activate --all

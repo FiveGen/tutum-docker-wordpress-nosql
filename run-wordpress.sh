@@ -61,4 +61,7 @@ else
 fi
 
 touch /.mysql_db_created
+
+sudo -u www-data -s wp core install --title=$WP_TITLE --admin_user=$WP_ADMIN_USER --admin_password=$WP_ADMIN_PASSWORD --admin_email=$WP_ADMIN_EMAIL && sudo -u www-data -s wp --allow-root plugin activate --all
+
 exec /run.sh
