@@ -63,8 +63,8 @@ RUN wget https://downloads.wordpress.org/plugin/user-role-editor.4.18.1.zip && u
 # MainWP Child (https://wordpress.org/plugins/mainwp-child/)
 RUN wget https://downloads.wordpress.org/plugin/mainwp-child.2.0.6.zip && unzip mainwp-child.2.0.6.zip
 
-# W3 Total Cache (https://wordpress.org/plugins/w3-total-cache/)
-RUN wget https://downloads.wordpress.org/plugin/w3-total-cache.0.9.4.1.zip && unzip w3-total-cache.0.9.4.1.zip
+# CDN Linker (https://github.com/wmark/CDN-Linker)
+RUN wget https://github.com/wmark/CDN-Linker/archive/v1.4.2.zip && unzip v1.4.2.zip
 
 ### End plugin installation ###
 
