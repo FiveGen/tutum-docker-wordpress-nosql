@@ -33,7 +33,7 @@ WORKDIR /app/wp-content/plugins
 RUN wget https://downloads.wordpress.org/plugin/amazon-ses-and-dkim-mailer.1.7.zip && unzip amazon-ses-and-dkim-mailer.1.7.zip
 
 # MainWP (https://wordpress.org/plugins/MainWP/)
-RUN wget https://downloads.wordpress.org/plugin/mainwp.2.0.6.zip && unzip mainwp.2.0.6.zip
+RUN wget https://downloads.wordpress.org/plugin/mainwp.2.0.7.1.zip && unzip mainwp.2.0.7.1.zip
 
 # Expose environment variables
 ENV DB_HOST **LinkMe**
