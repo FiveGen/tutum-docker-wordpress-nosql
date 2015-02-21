@@ -29,6 +29,7 @@ RUN chmod -R 777 /app/wp-content
 
 # Clone and link OneMozilla theme
 RUN git clone https://github.com/Mozilla-cIT/One-Mozilla-blog /app/wp-content/One-Mozilla-blog
+RUN cd /app/wp-content/One-Mozilla-blog && git checkout maxcdn
 RUN ln -sf /app/wp-content/One-Mozilla-blog/themes/OneMozilla /app/wp-content/themes/OneMozilla
 
 # Install all the plugins
