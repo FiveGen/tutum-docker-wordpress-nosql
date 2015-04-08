@@ -23,8 +23,8 @@ RUN chmod 755 /*.sh
 RUN chmod -R 777 /app/wp-content
 
 # Clone and link OneMozilla theme
-RUN git clone https://github.com/Mozilla-cIT/One-Mozilla-blog /app/wp-content/One-Mozilla-blog
-RUN ln -sf /app/wp-content/One-Mozilla-blog/themes/OneMozilla /app/wp-content/themes/OneMozilla
+WORKDIR /app/wp-content/themes
+RUN wget http://csa-wordpress.s3.amazonaws.com/plugins/mozilla.zip && unzip mozilla.zip
 
 # Install all the plugins
 WORKDIR /app/wp-content/plugins
