@@ -81,7 +81,7 @@ define('WPLANG', '');
 define('WP_DEBUG', false);
 
 /* Set the default theme to OneMozilla */
-define('WP_DEFAULT_THEME', 'OneMozilla');
+define('WP_DEFAULT_THEME', 'mozilla');
 
 /* That's all, stop editing! Happy blogging. */
 
