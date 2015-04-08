@@ -32,6 +32,9 @@ WORKDIR /app/wp-content/plugins
 # Amazon SES DKIM Mailer (https://wordpress.org/plugins/amazon-ses-and-dkim-mailer/)
 RUN wget https://downloads.wordpress.org/plugin/amazon-ses-and-dkim-mailer.1.7.zip && unzip amazon-ses-and-dkim-mailer.1.7.zip
 
+# Amazon SES DKIM Mailer (https://wordpress.org/plugins/amazon-ses-and-dkim-mailer/)
+RUN wget https://downloads.wordpress.org/plugin/easing-slider.2.2.1.1.zip && unzip easing-slider.2.2.1.1.zip
+
 # MainWP (https://wordpress.org/plugins/MainWP/)
 RUN wget https://downloads.wordpress.org/plugin/mainwp.2.0.10.zip && unzip mainwp.2.0.10.zip
 
