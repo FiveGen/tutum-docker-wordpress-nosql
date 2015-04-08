@@ -35,6 +35,11 @@ RUN wget https://downloads.wordpress.org/plugin/amazon-ses-and-dkim-mailer.1.7.z
 # MainWP (https://wordpress.org/plugins/MainWP/)
 RUN wget https://downloads.wordpress.org/plugin/mainwp.2.0.10.zip && unzip mainwp.2.0.10.zip
 
+# MainWP Extensions (https://extensions.mainwp.com)
+RUN wget http://csa-wordpress.s3.amazonaws.com/plugins/advanced-uptime-monitor-extension.zip && advanced-uptime-monitor-extension.zip
+RUN wget http://csa-wordpress.s3.amazonaws.com/plugins/mainwp-clean-and-lock-extension.zip && mainwp-clean-and-lock-extension.zip
+RUN wget http://csa-wordpress.s3.amazonaws.com/plugins/mainwp-sucuri-extension.zip && mainwp-sucuri-extension.zip
+
 # Expose environment variables
 ENV DB_HOST **LinkMe**
 ENV DB_PORT **LinkMe**
