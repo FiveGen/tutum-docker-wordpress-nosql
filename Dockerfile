@@ -67,8 +67,6 @@ RUN wget https://downloads.wordpress.org/plugin/mainwp-child.2.0.9.2.zip && unzi
 # CDN Linker (https://github.com/wmark/CDN-Linker)
 RUN wget https://github.com/wmark/CDN-Linker/archive/v1.4.2.zip && unzip v1.4.2.zip
 
-# Amazon SES DKIM Mailer (https://wordpress.org/plugins/amazon-ses-and-dkim-mailer/)
-RUN wget https://downloads.wordpress.org/plugin/easing-slider.2.2.1.1.zip && unzip easing-slider.2.2.1.1.zip
 
 ### End plugin installation ###
 
